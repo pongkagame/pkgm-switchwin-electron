@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Pongkagame!</title>
+
+  </head>
+  <body>
+    <h1>💖 Pongkagame!</h1>
+    <button id="switchSecondWindow">Switch to Window 2</button>
+    <p>Welcome to Window 1</p>
+    <script>
+      const { ipcRenderer } = require('electron');
+
+      const secondButton = document.getElementById('switchSecondWindow');
+
+      secondButton.addEventListener('click', () => {
+        ipcRenderer.send('openWindow2');
+      });
+    </script>
+  </body>
+</html>
